@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Estilização Global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5; /* Light Gray */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #3f51b5; /* Azul escuro */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: inline-block;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 12px;
+    font-weight: bold;
+    display: inline-block;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+/* Seção do Perfil */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #ffffff; /* Fundo claro */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+.photo {
+    text-align: center;
+    margin-right: 20px;
+}
+
+.photo img {
+    width: 165px; /* Ajustado proporcionalmente */
+    height: 165px; /* Ajustado proporcionalmente */
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #3f51b5; /* Azul escuro */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    max-width: 600px;
+}
+
+.info h1 {
+    font-size: 1em;
+    color: #3f51b5;
+    margin-bottom: 5px;
+}
+
+.info h2 {
+    font-size: 1em;
+    color: #00c9c9; 
+    margin-bottom: 10px;
+}
+
+/* Caixa de Biografia */
+.bio-section {
+    background-color: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 15px;
+    text-align: justify;
+}
+
+.bio-section h3 {
+    font-size: 1em; 
+    color: #3f51b5; /* Azul escuro */
+    margin-bottom: 10px;
+}
+
+.bio-section p {
+    font-size: 1em; 
+    line-height: 1.6;
+    color: #333; 
+}
+
+/* Rodapé */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    background-color: #3f51b5; /* Azul escuro */
+    color: #f5f5f5; /* Branco suave */
+    font-size: 1em; /* Ajustado */
+}
+
+/* Estilização para as seções em duas colunas */
+.objective-section, .formation-section, .skills-section, .projects-section, .soft-skills-section {
+    padding: 15px;
+    background-color: #ffffff; /* Fundo claro */
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.objective-section h3, .formation-section h3, .skills-section h3, .projects-section h3, .soft-skills-section h3 {
+    font-size: 1em; 
+    color: #3f51b5; /* Azul escuro */
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Listas com pontinhos */
+.formation-section ul, .skills-section ul, .projects-section ul, .soft-skills-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 10px;
+    color: #333; /* Texto escuro */
+}
+
+.formation-section ul li, .skills-section ul li, .projects-section ul li, .soft-skills-section ul li {
+    font-size: 1m;
+    margin: 5px 0;
+}
+
+

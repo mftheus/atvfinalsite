@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="atvfinal_css.css" media="all"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Ciências da Natureza</title>
+    <style>
+        .slideshow-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section {
+            flex: 1;
+            padding: 15px;
+            margin-top: 15%;
+        }
+
+        .content-section h3 {
+            font-size: 2em;
+            color: #3f51b5;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #2c42be;
+            margin-bottom: 10px;
+        }
+
+        .slideshow {
+            width: 420px;
+            height: 550px;
+            border: 3px solid #3f51b5;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slideshow-physics {
+            width: 600px;
+            height: 340px;
+            border: 3px solid #3f51b5;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slideshow img, .slideshow-physics img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        footer {
+            text-align: center;
+            padding: 8px;
+            background-color: #3f51b5;
+            color: #f5f5f5;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="atvfinal.html"><i class="fas fa-solid fa-house"></i> Home</a>
+            <a href="curriculo.html"><i class="fas fa-id-card"></i> Currículo</a>
+            <a href="https://www.linkedin.com/in/matheus-fraz%C3%A3o-913b39278/"><i class="fab fa-linkedin"></i> Meu LinkedIn</a>
+            <a href="cnt.html"><i class="fas fa-leaf"></i> Ciência da Natureza</a>
+            <a href="chs.html"><i class="fas fa-brain"></i> Ciências Humanas</a>
+            <a href="ling.html"><i class="fas fa-code"></i> Linguagens e Códigos</a>
+            <a href="mat.html"><i class="fas fa-square-root-alt"></i> Matemática</a>
+            <a href="iot.html"><i class="fas fa-microchip"></i> IoT</a>
+        </nav>
+    </header>
+
+    <div class="slideshow-container">
+        <div class="content-section">
+            <h2>Ciências da Natureza</h2>
+            <h3><i class="fas fa-bullseye"></i> Biologia</h3>
+            <p>Esta atividade foi a minha favorita da área de CNT esse ano foi o Ebook das Plantas feito na aula de biologia. 
+                Esse ebook foi bem divertido de se produzir, pois andamos pelo campus procurando por plantas diferentes, depois pesquisamos
+                as espécies, nome científico e juntamos tudo em um livro bonito. Confira ao lado!
+            </p>
+        </div>
+
+        <div class="slideshow">
+            <img src="ebook/1.png" alt="Página 1 do Ebook" class="slide" style="opacity: 1;">
+            <img src="ebook/2.png" alt="Página 2 do Ebook" class="slide">
+            <img src="ebook/3.png" alt="Página 3 do Ebook" class="slide">
+            <img src="ebook/4.png" alt="Página 4 do Ebook" class="slide">
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="content-section">
+            <h3><i class="fas fa-bullseye"></i> Física</h3>
+            <p>Essa atividade de física foi bem bacana, aprendemos sobre os tipos de terapia de eletrochoque e discutimos os dilemas éticos delas, 
+                aprendi sobre metodos que eu não conhecia, e que são bem interessantes.
+            </p>
+        </div>
+
+        <div class="slideshow-physics">
+            <img src="source/f1.png" alt="Página 1" class="slide-physics" style="opacity: 1;">
+            <img src="source/f2.png" alt="Página 2" class="slide-physics">
+            <img src="source/f3.png" alt="Página 3" class="slide-physics">
+            <img src="source/f4.png" alt="Página 4" class="slide-physics">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Matheus Molinari Frazão. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Slideshow automático para Biologia
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlides() {
+            slides.forEach((slide) => {
+                slide.style.opacity = "0";
+            });
+
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+
+            slides[slideIndex - 1].style.opacity = "1";
+            setTimeout(showSlides, 3000);
+        }
+        showSlides();
+
+        // Slideshow automático para Física
+        let slidePhysicsIndex = 0;
+        const physicsSlides = document.querySelectorAll(".slide-physics");
+
+        function showPhysicsSlides() {
+            physicsSlides.forEach((slide) => {
+                slide.style.opacity = "0";
+            });
+
+            slidePhysicsIndex++;
+            if (slidePhysicsIndex > physicsSlides.length) { slidePhysicsIndex = 1; }
+
+            physicsSlides[slidePhysicsIndex - 1].style.opacity = "1";
+            setTimeout(showPhysicsSlides, 3000);
+        }
+        showPhysicsSlides();
+    </script>
+</body>
+</html>
