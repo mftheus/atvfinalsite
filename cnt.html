@@ -22,7 +22,6 @@
         .content-section {
             flex: 1;
             padding: 15px;
-            margin-top: 15%;
         }
 
         .content-section h3 {
@@ -71,6 +70,24 @@
             font-size: 1em;
             margin-top: 20px;
         }
+        .slideshow-chemistry {
+    width: 600px; 
+    height: 340px;
+    border: 3px solid #3f51b5; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    position: relative; 
+}
+
+.slideshow-chemistry img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
+}
+
     </style>
 </head>
 <body>
@@ -109,10 +126,9 @@
         <div class="content-section">
             <h3><i class="fas fa-bullseye"></i> Física</h3>
             <p>Essa atividade de física foi bem bacana, aprendemos sobre os tipos de terapia de eletrochoque e discutimos os dilemas éticos delas, 
-                aprendi sobre metodos que eu não conhecia, e que são bem interessantes.
-            </p>
+                aprendi sobre metodos que eu não conhecia, e que são bem interessantes.</p>
         </div>
-
+    
         <div class="slideshow-physics">
             <img src="source/f1.png" alt="Página 1" class="slide-physics" style="opacity: 1;">
             <img src="source/f2.png" alt="Página 2" class="slide-physics">
@@ -120,45 +136,61 @@
             <img src="source/f4.png" alt="Página 4" class="slide-physics">
         </div>
     </div>
+    
+    <div class="slideshow-container">
+        <div class="content-section">
+            <h3><i class="fas fa-bullseye"></i> Química</h3>
+            <p>A aula prática de Quimica no laboratorio foi a aula mais legal do ano, nela nós fizemos um experimento de extração do DNA de um morango, e tivemos que 
+                ser meticulosos em varias etapas, sendo elas a maceração do morango, a filtragem dele em uma solução composta de sal, detergente e agua destilada, e no final conseguimos 
+                ver o DNA do morango se separando do liquido formando pequenas bolhas.</p>
+        </div>
+    
+        <div class="slideshow-chemistry">
+            <img src="source/q1.jpg" alt="Página 1" class="slide-chemistry" style="opacity: 1;">
+            <img src="source/q2.jpg" alt="Página 2" class="slide-chemistry">
+            <img src="source/q3.jpg" alt="Página 3" class="slide-chemistry">
+            <img src="source/q4.jpg" alt="Página 4" class="slide-chemistry">
+        </div>
+    </div>
+    
+
+
 
     <footer>
         <p>&copy; 2024 Matheus Molinari Frazão. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        // Slideshow automático para Biologia
-        let slideIndex = 0;
-        const slides = document.querySelectorAll(".slide");
-
-        function showSlides() {
-            slides.forEach((slide) => {
-                slide.style.opacity = "0";
-            });
-
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1; }
-
-            slides[slideIndex - 1].style.opacity = "1";
-            setTimeout(showSlides, 3000);
+        // Função genérica para iniciar slideshows automáticos
+        function startSlideshow(slideClass, interval = 3000) {
+            let slideIndex = 0;
+            const slides = document.querySelectorAll(slideClass);
+    
+            // Verifica se há slides para evitar erros
+            if (slides.length === 0) return;
+    
+            // Exibe o próximo slide
+            function showSlides() {
+                slides.forEach((slide) => {
+                    slide.style.opacity = "0"; // Esconde todas as imagens
+                });
+    
+                slideIndex = (slideIndex + 1) % slides.length; // Incrementa o índice de forma cíclica
+                slides[slideIndex].style.opacity = "1"; // Mostra a imagem atual
+            }
+    
+            // Inicia o intervalo para alternar os slides
+            showSlides(); // Mostra o primeiro slide
+            setInterval(showSlides, interval); // Troca slides a cada intervalo definido
         }
-        showSlides();
-
-        // Slideshow automático para Física
-        let slidePhysicsIndex = 0;
-        const physicsSlides = document.querySelectorAll(".slide-physics");
-
-        function showPhysicsSlides() {
-            physicsSlides.forEach((slide) => {
-                slide.style.opacity = "0";
-            });
-
-            slidePhysicsIndex++;
-            if (slidePhysicsIndex > physicsSlides.length) { slidePhysicsIndex = 1; }
-
-            physicsSlides[slidePhysicsIndex - 1].style.opacity = "1";
-            setTimeout(showPhysicsSlides, 3000);
-        }
-        showPhysicsSlides();
+    
+        // Iniciar slideshows para todas as seções
+        startSlideshow(".slide", 3000);         // Slideshow para Biologia
+        startSlideshow(".slide-physics", 3000); // Slideshow para Física
+        startSlideshow(".slide-chemistry", 3000); // Slideshow para Química
     </script>
+    
+    
+    
 </body>
 </html>
