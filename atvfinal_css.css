@@ -35,12 +35,29 @@ nav a {
     padding: 6px 12px;
     font-weight: bold;
     display: inline-block;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease, border-bottom 0.3s ease;
+    position: relative;
 }
 
 nav a:hover {
-    color: #fff;
-    border-bottom: 2px solid #fff;
+    color: #ffffff; /* Amarelo interativo */
+    border-bottom: 2px solid #ffffff;
+    animation: bounce 0.4s ease;
+}
+
+nav a:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+/* Efeito Bounce */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 /* Seção do Perfil */
@@ -154,5 +171,3 @@ footer {
     font-size: 1m;
     margin: 5px 0;
 }
-
-

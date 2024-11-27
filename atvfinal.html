@@ -7,9 +7,22 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Hub de Currículos e Trabalhos</title>
     <style>
+        body {
+            background-image: url('source/background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
         .soft-skills-section {
-            background-color: #ffffff;
+            position: relative;
+            background-color: transparent;
             border-radius: 8px;
+            overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             margin: 20px auto;
             max-width: 1000px;
@@ -20,14 +33,25 @@
             gap: 20px;
         }
 
+        .soft-skills-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index: -1;
+        }
+
         .soft-skills-section div {
-            width: 48%; /* Ajuste o tamanho das colunas */
+            width: 48%;
         }
 
         .soft-skills-section h1 {
             font-size: 2em;
             margin-bottom: 15px;
-            color: #3f51b5;
+            color: #001068;
         }
 
         .soft-skills-section h2 {
@@ -37,12 +61,12 @@
 
         .soft-skills-section p, .soft-skills-section ul {
             font-size: 1.1em;
-            color: #666;
+            color: #3a3a3a;
         }
 
         .soft-skills-section ul li i {
             margin-right: 10px;
-            color: #3f51b5;
+            color: #000f5c;
         }
 
         .glados-image {
@@ -54,7 +78,7 @@
             margin-left: auto;
             margin-right: auto;
             opacity: 0;
-            transition: opacity 1s ease-in-out, transform 2s ease-in-out; /* Animação de rotação */
+            transition: opacity 1s ease-in-out, transform 2s ease-in-out;
         }
 
         #rodar {
@@ -72,6 +96,13 @@
 
         #rodar:hover {
             background-color: #1e2a9a;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
@@ -97,9 +128,9 @@
             <h1><i class="fas fa-home"></i> Bem-vindo ao Hub de Currículos e Trabalhos!</h1>
             <p>Este é o seu portal para explorar meu currículo, projetos e experiências. Navegue pelas seções e conheça mais sobre o meu trabalho e habilidades.</p>
         </div>
-
+    
         <div>
-            <h2><i class="fas fa-info-circle"></i> O que você encontrará aqui?</h2>
+            <h1><i class="fas fa-info-circle"></i> O que você encontrará aqui?</h1>
             <p>Em nosso hub, você pode acessar:</p>
             <ul>
                 <li><i class="fas fa-file-alt"></i> Meu currículo completo.</li>
@@ -108,6 +139,7 @@
             </ul>
         </div>
     </section>
+    
 
     <!-- Imagem GLaDOS -->
     <img src="GLaDOS.png" alt="GLaDOS" class="glados-image">
@@ -121,22 +153,17 @@
     </footer>
 
     <script>
-        // Quando o DOM estiver completamente carregado
         window.onload = function() {
-            // Altera a opacidade da imagem para 1 (fazendo-a aparecer)
             document.querySelector('.glados-image').style.opacity = 1;
         };
     
-        // Adiciona a funcionalidade de clique ao botão
         document.getElementById('rodar').onclick = function() {
-            // Reinicia a rotação 3D da imagem para permitir que ela gire novamente
             var gladosImage = document.querySelector('.glados-image');
-            gladosImage.style.transition = 'none';  // Desabilita a transição temporariamente
-            gladosImage.style.transform = 'rotateY(0deg)'; // Restaura a rotação
-            // Força o navegador a aplicar a mudança antes de reiniciar a animação
+            gladosImage.style.transition = 'none';
+            gladosImage.style.transform = 'rotateY(0deg)';
             setTimeout(function() {
-                gladosImage.style.transition = 'transform 2s ease-in-out'; // Habilita novamente a transição
-                gladosImage.style.transform = 'rotateY(360deg)'; // Aplica a rotação
+                gladosImage.style.transition = 'transform 2s ease-in-out';
+                gladosImage.style.transform = 'rotateY(360deg)';
             }, 10);
         };
     </script>
