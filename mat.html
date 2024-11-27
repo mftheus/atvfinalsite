@@ -5,7 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="atvfinal_css.css" media="all"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <title>Matematica</title>
+    <title>Matemática e suas Tecnologias</title>
+    <style>
+        header {
+            background-color: rgba(78, 120, 78, 0.7); 
+            margin: 0;
+            padding: 0;
+            position: relative; 
+        }
+
+        footer {
+            background-color: rgb(78, 120, 78); 
+            opacity: 0.7    ;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #4e784e;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('source/background7.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .content-section h3 {
+            font-size: 2em;
+            color: #4e784e;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .content-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+            text-align: center;
+        }
+
+        .slideshow {
+            width: 420px;
+            height: 550px;
+            border: 3px solid #4e784e;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slideshow iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,7 +101,31 @@
             <a href="iot.html"><i class="fas fa-microchip"></i> IoT</a>
         </nav>
     </header>
+
+    <!-- Título Principal -->
+    <div class="slideshow-container">
+        <h1><i class="fas fa-square-root-alt"></i> Matemática e suas Tecnologias</h1>
+    </div>
+
+    <!-- Seção de Matemática -->
+    <div class="slideshow-container">
+        <div class="content-section">
+            <h3><i class="fas fa-calculator"></i> Matemática</h3>
+            <p>
+                Nesta disciplina, exploramos aplicações práticas de conceitos matemáticos para resolver problemas do cotidiano.  
+                Nosso principal projeto envolveu a coleta de dados da turma, que foram analisados para produzir um material estatístico,  
+                incluindo cálculos de média, moda e mediana. Este trabalho destacou-se pela sua profundidade e clareza,  
+                demonstrando a relevância da estatística na interpretação e apresentação de informações. Confira o PDF do trabalho ao lado.  
+            </p>
+            
+        </div>
+        <div class="slideshow">
+            <iframe src="source/mat.pdf" id="iframe-mat"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Matheus Molinari Frazão. Todos os direitos reservados.</p>
+    </footer>
 </body>
-<footer>
-    <p>&copy; 2024 Matheus Molinari Frazão. Todos os direitos reservados.</p>
-</footer>
+</html>
